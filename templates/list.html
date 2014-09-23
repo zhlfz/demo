@@ -17,14 +17,18 @@
 
         <ion-item ng-repeat="item in items"
                   item="item"
-                  href="#/item/{{item.id}}" ng-click="clickItem()">
+                  href="#" ng-click="clickItem()">
             Item {{ item.id }}
         </ion-item>
+        <ion-infinite-scroll
+                on-infinite="loadMore()"
+                icon="ion-loading-c"
+                distance="1%">
+        </ion-infinite-scroll>
+
 
     </ion-list>
-    <ion-infinite-scroll
-            on-infinite="loadMore()"
-            icon="ion-loading-c"
-            distance="10%">
-    </ion-infinite-scroll>
+
+
+
 </ion-content>

@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# 2014-03-13 v1.0.298
+js/app.js
+js/controllers.js
+lib/ionic/js/ionic.bundle.js
+lib/ionic/css/ionic.css
+css/style.css
+
+
+NETWORK:
+*
+FALLBACK:

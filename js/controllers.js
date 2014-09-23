@@ -1,19 +1,19 @@
 angular.module('starter.controllers', [])
+    .controller('DemoCtrl', function ($scope) {
+        $scope.items = [
+            {id:1,title:"列表",url:"list"},
+            {id:2,title:"新闻",url:"news"}
+        ];
+        $scope.$on('stateChangeSuccess', function () {
+        });
+    })
+
     .controller('ListCtrl', function ($scope, $timeout) {
         $scope.items = [
             { id: 1 },
             { id: 2 },
             { id: 3 },
-            { id: 4 },
-            { id: 5 },
-            { id: 6 },
-            { id: 7},
-            { id: 8},
-            { id: 9},
-            { id: 10},
-            { id: 11},
-            { id: 12},
-            { id: 13}
+            { id: 4 }
         ];
 
         $scope.maxList = $scope.items.length + 1;
@@ -59,20 +59,24 @@ angular.module('starter.controllers', [])
         $scope.doRefresh = function () {
             $http.get('json.json').success(function(data) {
                 $scope.items.splice(0, 0,
-                    data.abc
+                    data
                 );
             });
                 $scope.$broadcast('scroll.refreshComplete');
         };
 
         $scope.loadMore = function () {
+
+            $http.get('json2.json').success(function(data) {
                 $scope.items.push(
-                    { id: 2}
+                    data
                 );
+            });
+
                 $scope.$broadcast('scroll.infiniteScrollComplete');
         };
 
         $scope.$on('stateChangeSuccess', function () {
-            $scope.loadMore();
+//            $scope.loadMore();
         });
     });
