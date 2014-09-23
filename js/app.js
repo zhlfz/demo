@@ -26,6 +26,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         $stateProvider
 
             // setup an abstract state for the tabs directive
+
             .state('demo', {
                 url: '/demo',
                 templateUrl: 'templates/demo.html',
@@ -47,6 +48,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: '/newsDetail/:id',
                 templateUrl: 'templates/newsDetail.html',
                 controller: 'NewsDetailCtrl'
+            })
+            .state('actionSheet', {
+                url: '/actionSheet',
+                templateUrl: 'templates/actionSheet.html',
+                controller: 'ActionSheetCtrl'
             });
 
         // if none of the above states are matched, use this as the fallback
