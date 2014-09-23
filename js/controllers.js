@@ -96,6 +96,7 @@ angular.module('starter.controllers', [])
 /**
  * 新闻列表
  */
-    .controller('NewsDetailCtrl', function ($scope, $http) {
+    .controller('NewsDetailCtrl', function ($scope, $stateParams, $http) {
+        console.log($stateParams)
     })
 ;
