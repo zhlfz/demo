@@ -45,25 +45,8 @@ angular.module('starter.controllers', [])
         $scope.news = [];
         $scope.doRefresh = function () {
             $http.get('json.json').success(function (json) {
-                $scope.imgs.splice(0, 0,
-                    json.imgs
-                );
-                $scope.news.splice(0, 0,
-                    {
-                        "id": 313,
-                        "title": "List54",
-                        "image": "",
-                        "content": "",
-                        "url": "http://placehold.it/640x300"
-                    },
-                    {
-                        "id": 33,
-                        "title": "List54",
-                        "image": "",
-                        "content": "",
-                        "url": "http://placehold.it/640x300"
-                    }
-                );
+                $scope.imgs = json.imgs.concat($scope.imgs);
+                $scope.news = json.news.concat($scope.news);
             });
             $scope.$broadcast('scroll.refreshComplete');
         };
