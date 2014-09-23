@@ -1,8 +1,8 @@
 angular.module('starter.controllers', [])
     .controller('DemoCtrl', function ($scope) {
         $scope.items = [
-            {id:1,title:"列表",url:"list"},
-            {id:2,title:"新闻",url:"news"}
+            {id: 1, title: "列表", url: "list"},
+            {id: 2, title: "新闻", url: "news"}
         ];
         $scope.$on('stateChangeSuccess', function () {
         });
@@ -40,40 +40,43 @@ angular.module('starter.controllers', [])
             $scope.loadMore();
         });
     })
-    .controller('NewsCtrl', function ($scope, $timeout,$http) {
-        $scope.items = [
-            {
-                id: 1,
-                title: '1',
-                image: "",
-                content: "6"
-            },
-            {
-                id: 2,
-                title: '2',
-                image: "",
-                content: "7"
-            }
-        ];
-
+    .controller('NewsCtrl', function ($scope, $timeout, $http) {
+        $scope.imgs = [];
+        $scope.news = [];
         $scope.doRefresh = function () {
-            $http.get('json.json').success(function(data) {
-                $scope.items.splice(0, 0,
-                    data
+            $http.get('json.json').success(function (json) {
+                $scope.imgs.splice(0, 0,
+                    json.imgs
+                );
+                $scope.news.splice(0, 0,
+                    {
+                        "id": 313,
+                        "title": "List54",
+                        "image": "",
+                        "content": "",
+                        "url": "http://placehold.it/640x300"
+                    },
+                    {
+                        "id": 33,
+                        "title": "List54",
+                        "image": "",
+                        "content": "",
+                        "url": "http://placehold.it/640x300"
+                    }
                 );
             });
-                $scope.$broadcast('scroll.refreshComplete');
+            $scope.$broadcast('scroll.refreshComplete');
         };
 
         $scope.loadMore = function () {
-
-            $http.get('json2.json').success(function(data) {
+            $http.get('json2.json').success(function (data) {
                 $scope.items.push(
                     data
                 );
+                $scope.moreDataCanBeLoaded = false;
             });
 
-                $scope.$broadcast('scroll.infiniteScrollComplete');
+            $scope.$broadcast('scroll.infiniteScrollComplete');
         };
 
         $scope.$on('stateChangeSuccess', function () {

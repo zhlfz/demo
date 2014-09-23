@@ -1,35 +1,29 @@
 <ion-content>
-    <ion-slide-box>
-        <ion-slide>
-            <div class="box blue" style="width:400px; heigt:400px;border: solid red 4;">
-
-            </div>
-        </ion-slide>
-        <ion-slide>
-            <div class="box red">
-                Slide 2!
-            </div>
-        </ion-slide>
-    </ion-slide-box>
-
     <ion-refresher
             pulling-text="下拉刷新..."
             on-refresh="doRefresh()">
     </ion-refresher>
 
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+        <ion-slide ng-repeat="item in imgs">
+            <div class="box">
+                <img src="{{item.url}}"/>
+            </div>
+        </ion-slide>
+    </ion-slide-box>
+
     <ion-list>
-        <a class="item item-thumbnail-left" href="#" ng-repeat="item in items"
+        <a class="item item-thumbnail-left" href="#" ng-repeat="item in news"
            item="item"
            href="#/{{item.id}}" ng-click="clickItem()">
-            <img src="cover.jpg">
+            <img src="{{item.url}}">
 
-            <h2>{{item.title}}</h2>
 
-            <p>{{ item.id }}</p>
+            <p>{{ item }}</p>
         </a>
     </ion-list>
     <ion-infinite-scroll
-            ng-if="moreDataCanBeLoaded()"
+            ng-if="moreDataCanBeLoaded"
             on-infinite="loadMore()"
             icon="ion-loading-c"
             distance="1%">

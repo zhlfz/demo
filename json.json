@@ -1,6 +1,33 @@
-{
-    "id": 33,
-    "title": "List54",
-    "image": "",
-    "content": ""
+{"news": [
+    {
+        "id": 33,
+        "title": "List54",
+        "image": "",
+        "content": "",
+        "url": "http://placehold.it/640x300"
+    },
+    {
+        "id": 33,
+        "title": "List54",
+        "image": "",
+        "content": "",
+        "url": "http://placehold.it/640x300"
+    }
+], "imgs": [
+    {
+        "id": 33,
+        "title": "List54",
+        "image": "",
+        "content": "",
+        "url": "http://placehold.it/640x300"
+    },
+    {
+        "id": 33,
+        "title": "List54",
+        "image": "",
+        "content": "",
+        "url": "http://placehold.it/640x300"
+    }
+]
+
 }
