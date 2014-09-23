@@ -56,7 +56,7 @@ angular.module('starter.controllers', [])
                 $ionicSlideBoxDelegate.update();
                 $scope.news = json.news.concat($scope.news);
                 //开启加载更多
-                $scope.moreDataCanBeLoaded = json.moreData;
+                $scope.moreDataCanBeLoaded = json.moreDataCanBeLoaded;
             }).error(function (data, status, headers, config) {
 
             }).finally(function () {
