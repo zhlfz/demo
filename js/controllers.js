@@ -44,31 +44,27 @@ angular.module('starter.controllers', [])
 /**
  * 新闻列表
  */
-    .controller('NewsCtrl', function ($scope, $http) {
-
+    .controller('NewsCtrl', function ($scope, $http, $ionicSlideBoxDelegate) {
         $scope.imgs = []; //图片滚动新闻
         $scope.news = []; //列表新闻
 
-        //通过Ajax获取信息
-        $http.get('json.json').success(function (json) {
-            $scope.imgs = json.imgs;
-            $scope.news = json.news.concat($scope.news);
-        });
-        //开启加载更多
-        $scope.moreDataCanBeLoaded = true;
-
         //下拉刷新事件
         $scope.doRefresh = function () {
+            //通过Ajax获取信息
             $http.get('json.json').success(function (json) {
                 $scope.imgs = json.imgs;
+                $ionicSlideBoxDelegate.update();
                 $scope.news = json.news.concat($scope.news);
-                $scope.moreDataCanBeLoaded = true;
+                //开启加载更多
+                $scope.moreDataCanBeLoaded = json.moreData;
             }).error(function (data, status, headers, config) {
 
+            }).finally(function () {
+                // Stop the ion-refresher from spinning
+                $scope.$broadcast('scroll.refreshComplete');
             });
-            $scope.$broadcast('scroll.refreshComplete');
-
         };
+        $scope.doRefresh();
 
         //上拉加载更多
         $scope.loadMore = function () {
@@ -76,12 +72,10 @@ angular.module('starter.controllers', [])
                 $scope.items.push(
                     data
                 );
-
                 if (data == null) {
                     //如果没有更多信息，关闭加载更多
                     $scope.moreDataCanBeLoaded = false;
                 }
-
             }).error(function (data, status, headers, config) {
                 //如果请求失败，关闭加载更多
                 $scope.moreDataCanBeLoaded = false;

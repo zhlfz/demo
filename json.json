@@ -15,7 +15,7 @@
         "content": "接触过外租车的同事都知道，上述种种情景，是我们日常在进行外租车管理时经常遇到的问题。",
         "date": "2014-02-02",
         "state": "已读",
-        "url": "http://placehold.it/300x200"
+        "url": "http://placehold.it/600x200"
     }
 ], "imgs": [
     {
@@ -23,15 +23,14 @@
         "title": "List54",
         "image": "",
         "content": "",
-        "url": "http://placehold.it/300x200"
+        "url": "http://placehold.it/600x200"
     },
     {
         "id": 4,
         "title": "List54",
         "image": "",
         "content": "",
-        "url": "http://placehold.it/300x200"
+        "url": "http://placehold.it/600x200"
     }
-]
-
+], "moreData": true
 }

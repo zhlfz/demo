@@ -4,19 +4,17 @@
             on-refresh="doRefresh()">
     </ion-refresher>
 
-    <ion-slide-box does-continue="true" on-slide-changed="slideHasChanged($index)">
-        <ion-slide ng-repeat="item in imgs" auto-play="true">
+    <ion-slide-box auto-play="true">
+        <ion-slide ng-repeat="item in imgs">
             <div class="box">
-                <img class="newsSlideImage" src="{{item.url}}"/>
+                <img class="newsSlideImage" ng-src="{{item.url}}"/>
             </div>
         </ion-slide>
     </ion-slide-box>
 
     <ion-list>
-        <a class="item item-thumbnail-left" ng-repeat="item in news"
-           item="item"
-           href="#/newsDetail/{{item.id}}">
-            <img src="{{item.url}}">
+        <a class="item item-thumbnail-left" ng-repeat="item in news" href="#/newsDetail/{{item.id}}">
+            <img ng-src="{{item.url}}">
 
             <h2>{{item.title}}</h2>
 
