@@ -40,29 +40,62 @@ angular.module('starter.controllers', [])
             $scope.loadMore();
         });
     })
-    .controller('NewsCtrl', function ($scope, $timeout, $http) {
-        $scope.imgs = [];
-        $scope.news = [];
+
+/**
+ * 新闻列表
+ */
+    .controller('NewsCtrl', function ($scope, $http) {
+
+        $scope.imgs = []; //图片滚动新闻
+        $scope.news = []; //列表新闻
+
+        //通过Ajax获取信息
+        $http.get('json.json').success(function (json) {
+            $scope.imgs = json.imgs;
+            $scope.news = json.news.concat($scope.news);
+        });
+        //开启加载更多
+        $scope.moreDataCanBeLoaded = true;
+
+        //下拉刷新事件
         $scope.doRefresh = function () {
             $http.get('json.json').success(function (json) {
-                $scope.imgs = json.imgs.concat($scope.imgs);
+                $scope.imgs = json.imgs;
                 $scope.news = json.news.concat($scope.news);
+                $scope.moreDataCanBeLoaded = true;
+            }).error(function (data, status, headers, config) {
+
             });
             $scope.$broadcast('scroll.refreshComplete');
+
         };
 
+        //上拉加载更多
         $scope.loadMore = function () {
             $http.get('json2.json').success(function (data) {
                 $scope.items.push(
                     data
                 );
+
+                if (data == null) {
+                    //如果没有更多信息，关闭加载更多
+                    $scope.moreDataCanBeLoaded = false;
+                }
+
+            }).error(function (data, status, headers, config) {
+                //如果请求失败，关闭加载更多
                 $scope.moreDataCanBeLoaded = false;
             });
-
             $scope.$broadcast('scroll.infiniteScrollComplete');
         };
-
         $scope.$on('stateChangeSuccess', function () {
-//            $scope.loadMore();
+            $scope.loadMore();
         });
-    });
+    })
+
+/**
+ * 新闻列表
+ */
+    .controller('NewsDetailCtrl', function ($scope, $http) {
+    })
+;

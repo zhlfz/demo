@@ -1,4 +1,28 @@
 /* Empty. Add your own CSS if you like */
-ion-nav-view{
+ion-nav-view {
     background-color: #ffffff;
 }
+
+.slider .slider-slides {
+    width: 100%;
+}
+
+.slider .newsSlideImage {
+    height: 200px;
+}
+
+.item-note {
+    width: 100%;
+}
+
+.item-note .date {
+    text-align: right;
+    float: right;
+}
+
+.item-note .state {
+    text-align: left;
+}
+.item-note .row,.item-note .col{
+    padding: 0;
+ }

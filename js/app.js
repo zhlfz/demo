@@ -42,6 +42,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: '/news',
                 templateUrl: 'templates/news.html',
                 controller: 'NewsCtrl'
+            })
+            .state('newsDetail', {
+                url: '/newsDetail/:id',
+                templateUrl: 'templates/newsDetail.html',
+                controller: 'NewsDetailCtrl'
             });
 
         // if none of the above states are matched, use this as the fallback

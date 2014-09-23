@@ -1,32 +1,36 @@
 {"news": [
     {
-        "id": 33,
-        "title": "List54",
-        "image": "",
-        "content": "",
-        "url": "http://placehold.it/640x300"
+        "id": 1,
+        "title": "1【关注】弄虚作假非小事 爱惜人品莫为之",
+        "image": "http://placehold.it/300x200",
+        "content": "（编辑部讯）近期，公司查处了一起舞弊事件。据悉，2013年4月至12月期间，采购多名员工先后谎称自己出差去考察供应商，并填写了出差考察表,而原供应商管理组总监蒋舟（化名）在知晓此事后予以默许。        ",
+        "state": "未读",
+        "date": "2014-02-02",
+        "url": "http://placehold.it/300x300"
     },
     {
-        "id": 33,
-        "title": "List54",
-        "image": "",
-        "content": "",
-        "url": "http://placehold.it/640x300"
+        "id": 2,
+        "title": "2【关注】弄虚作假非小事 爱惜人品莫为之",
+        "image": "http://placehold.it/300x200",
+        "content": "接触过外租车的同事都知道，上述种种情景，是我们日常在进行外租车管理时经常遇到的问题。",
+        "date": "2014-02-02",
+        "state": "已读",
+        "url": "http://placehold.it/300x200"
     }
 ], "imgs": [
     {
-        "id": 33,
+        "id": 3,
         "title": "List54",
         "image": "",
         "content": "",
-        "url": "http://placehold.it/640x300"
+        "url": "http://placehold.it/300x200"
     },
     {
-        "id": 33,
+        "id": 4,
         "title": "List54",
         "image": "",
         "content": "",
-        "url": "http://placehold.it/640x300"
+        "url": "http://placehold.it/300x200"
     }
 ]
 
