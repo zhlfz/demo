@@ -45,7 +45,7 @@ angular.module('starter.controllers', [])
 /**
  * 新闻列表
  */
-    .controller('NewsCtrl', function ($scope, $http) {
+    .controller('NewsCtrl', function ($scope, $http,$ionicSlideBoxDelegate) {
         $scope.imgs = []; //图片滚动新闻
         $scope.news = []; //列表新闻
 
@@ -133,6 +133,15 @@ angular.module('starter.controllers', [])
             }, 10000);
         };
 
+
+    })
+
+/**
+ * 新闻内容
+ */
+    .controller('ImgCtrl', function ($scope, $stateParams) {
+        $scope.url = $stateParams.url;
+        console.log($scope.url);
 
     })
 ;

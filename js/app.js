@@ -18,7 +18,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
 
     .config(function ($stateProvider, $urlRouterProvider) {
-
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
         // Set up the various states which the app can be in.
@@ -53,6 +52,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: '/actionSheet',
                 templateUrl: 'templates/actionSheet.html',
                 controller: 'ActionSheetCtrl'
+            })
+            .state('img', {
+                url: '/img/{url:.*}',
+                templateUrl: 'templates/img.html',
+                controller: 'ImgCtrl'
             });
 
         // if none of the above states are matched, use this as the fallback

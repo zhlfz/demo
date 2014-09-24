@@ -23,6 +23,25 @@ ion-nav-view {
 .item-note .state {
     text-align: left;
 }
-.item-note .row,.item-note .col{
+
+.item-note .row, .item-note .col {
     padding: 0;
- }
+}
+
+.newsImage .scroll {
+    height: 100%;
+}
+
+.newsImage .scroll img {
+    /*position: absolute;*/
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+    /*width: auto;*/
+    max-width: 100%;
+    /*height: auto;*/
+    /*max-height: 100%;*/
+    /*top: 50%;*/
+    /*margin-top: -150px;*/
+}
