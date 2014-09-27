@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 controller: 'ActionSheetCtrl'
             })
             .state('img', {
-                url: '/img/{url:.*}',
+                url: '/img/{url:[\S\s]*?}',
                 templateUrl: 'templates/img.html',
                 controller: 'ImgCtrl'
             });

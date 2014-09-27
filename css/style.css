@@ -45,3 +45,11 @@ ion-nav-view {
     /*top: 50%;*/
     /*margin-top: -150px;*/
 }
+.newsImage .option{
+    position: fixed;
+    float: right;
+}
+
+.center{
+    text-align: center;
+}

@@ -1,4 +1,17 @@
+
+<div class="bar bar-header item-input-inset">
+    <label class="item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input type="search" placeholder="Search" ng-enter="search()" ng-model="searchParam">
+    </label>
+    <button class="button button-clear" ng-click="canceled()">
+    </button>
+    <div>{{searchParam}}</div>
+
+</div>
 <ion-content>
+
+
     <ion-refresher
             pulling-text="下拉刷新..."
             on-refresh="doRefresh()">
@@ -15,10 +28,9 @@
     <ion-list>
         <a class="item item-thumbnail-left" ng-repeat="item in news" href="#/newsDetail/{{item.id}}">
             <img ng-src="{{item.url}}">
-
             <h2>{{item.title}}</h2>
 
-            <p>{{ item.content }}</p>
+            <p   ng-bind-html="item.content | rawHtml"></p>
              <span class="item-note">
                  <div class="row">
                      <div class="col"><span class="state">{{item.state}}</span></div>
@@ -27,6 +39,7 @@
              </span>
         </a>
     </ion-list>
+
     <ion-infinite-scroll
             ng-if="moreDataCanBeLoaded"
             on-infinite="loadMore()"
