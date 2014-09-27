@@ -1,16 +1,13 @@
-
 <div class="bar bar-header item-input-inset">
     <label class="item-input-wrapper">
         <i class="icon ion-ios7-search placeholder-icon"></i>
-        <input type="search" placeholder="Search" ng-enter="search()" ng-model="searchParam">
+        <input type="search" placeholder="Search" ng-enter ng-model="searchParam">
     </label>
     <button class="button button-clear" ng-click="canceled()">
     </button>
     <div>{{searchParam}}</div>
-
 </div>
 <ion-content>
-
 
     <ion-refresher
             pulling-text="下拉刷新..."

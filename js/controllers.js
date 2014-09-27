@@ -46,7 +46,7 @@ angular.module('starter.controllers', [])
 /**
  * 新闻列表
  */
-    .controller('NewsCtrl', function ($scope, $http,$ionicSlideBoxDelegate,$filter) {
+    .controller('NewsCtrl', function ($scope, $http, $ionicSlideBoxDelegate, $filter) {
         $scope.imgs = []; //图片滚动新闻
         $scope.news = []; //列表新闻
 
@@ -89,11 +89,11 @@ angular.module('starter.controllers', [])
         $scope.$on('stateChangeSuccess', function () {
             $scope.loadMore();
         });
-        $scope.search = function(){
-            $scope.sdadess=$scope.searchValue;
-            console.log($scope.searchValue);
+        $scope.search = function () {
+            alert($scope.searchParam);
+            $scope.sdadess = $scope.searchValue;
         };
-        $scope.canceled = function(){
+        $scope.canceled = function () {
             $scope.searchValue = "";
         };
         $scope.$watch('searchParam', function () {
@@ -151,33 +151,32 @@ angular.module('starter.controllers', [])
  * 新闻内容
  */
     .controller('ImgCtrl', function ($scope, $stateParams) {
+        console.log($stateParams.url);
+        console.log($stateParams.param)
         $scope.url = $stateParams.url;
         $scope.url = $stateParams.p;
-        $scope.save = function(){
+        $scope.save = function () {
             alert($scope.url);
             window.deppon.startFunction();
         }
 
     })
 
-    .filter("spliteFilter", function() {
-        return function(param,c){
+    .filter("spliteFilter", function () {
+        return function (param, c) {
             return param.split(c);
         }
     })
-    .filter('rawHtml', ['$sce', function($sce){
-        return function(val) {
+    .filter('rawHtml', ['$sce', function ($sce) {
+        return function (val) {
             return $sce.trustAsHtml(val);
         };
     }])
     .directive('ngEnter', function () {
         return function (scope, element, attrs) {
-            element.bind("keydown keypress", function (event) {
-                if(event.which === 13) {
-                    scope.$apply(function (){
-                        scope.$eval(attrs.ngEnter);
-                    });
-                    event.preventDefault();
+            element.bind("keypress", function (event) {
+                if (event.which == 13) {
+                    scope.search();
                 }
             });
         };
