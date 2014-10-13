@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="demo">
+  <component name="PublishConfigData" autoUpload="Always" serverName="/android/tomcat/apache-tomcat-6.0.41/webapps/a">
     <serverData>
-      <paths name="demo">
+      <paths name="/android/tomcat/apache-tomcat-6.0.41/webapps/a">
         <serverdata>
           <mappings>
-            <mapping deploy="/lsl/demo" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

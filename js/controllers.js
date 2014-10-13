@@ -3,7 +3,11 @@ angular.module('starter.controllers', [])
         $scope.items = [
             {id: 1, title: "列表", url: "list"},
             {id: 2, title: "新闻", url: "news"},
-            {id: 3, title: "ActionSheet ", url: "actionSheet"}
+            {id: 3, title: "ActionSheet ", url: "actionSheet"},
+            {id: 4, title: "Form ", url: "form"},
+            {id: 5, title: "Card ", url: "card"},
+            {id: 6, title: "Tab ", url: "tab"},
+            {id: 7, title: "Nav ", url: "nav"}
         ]
         $scope.$on('stateChangeSuccess', function () {
         });
@@ -162,6 +166,27 @@ angular.module('starter.controllers', [])
 
     })
 
+/**
+ * Form
+ */
+    .controller('FormCtrl', function ($scope,factorys) {
+        factorys.timeOut();
+
+    })
+/**
+ * Card
+ */
+    .controller('CardCtrl', function ($scope) {
+
+
+    })
+/**
+ * Card
+ */
+    .controller('NavCtrl', function ($scope) {
+
+
+    })
     .filter("spliteFilter", function () {
         return function (param, c) {
             return param.split(c);
@@ -180,5 +205,13 @@ angular.module('starter.controllers', [])
                 }
             });
         };
+    })
+
+    .factory("factorys",function(){
+        return {
+            timeOut:function(){
+                alert(1);
+            }
+        }
     })
 ;

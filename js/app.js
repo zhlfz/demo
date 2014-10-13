@@ -57,7 +57,29 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: '/img/{url:[\S\s]*?}',
                 templateUrl: 'templates/img.html',
                 controller: 'ImgCtrl'
-            });
+            })
+            .state('form', {
+                url: '/form',
+                templateUrl: 'templates/form.html',
+                controller: 'FormCtrl'
+            })
+            .state('card', {
+                url: '/card',
+                templateUrl: 'templates/card.html',
+                controller: 'CardCtrl'
+            })
+            .state('tab', {
+                url: '/tab',
+                templateUrl: 'templates/tab.html',
+                controller: 'TabCtrl'
+            })
+            .state('nav', {
+                url: '/nav',
+                templateUrl: 'templates/navigation.html',
+                controller: 'NavCtrl'
+            })
+
+        ;
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/demo');
